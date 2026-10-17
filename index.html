@@ -272,7 +272,6 @@
                     <!-- PROJECT 1: Forklift FEA -->
                     <div class="project-card tech-box flex flex-col bg-white border border-slate-200 rounded p-5 shadow-sm hover:shadow-md transition-all group"
                         data-category="fea">
-                        <!-- Photo / Image Placeholder Container -->
                         <div
                             class="relative aspect-[16/10] bg-slate-100 rounded border border-slate-200 overflow-hidden mb-4 flex items-center justify-center">
                             <img src="images/forklift-fea.jpg" alt="Forklift Optimization FEA"
@@ -691,7 +690,7 @@
         </section>
     </main>
 
-    <!-- CLEAN FOOTER & CONTACT LINKS (NO INQUIRY FORM) -->
+    <!-- CLEAN FOOTER & CONTACT LINKS -->
     <footer class="bg-white border-t border-slate-200 py-10 font-mono text-xs">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
@@ -703,7 +702,6 @@
 
                 <!-- Professional Link Actions -->
                 <div class="flex flex-wrap items-center gap-3">
-                    <!-- Copy Email Button -->
                     <button onclick="copyEmailToClipboard()"
                         class="inline-flex items-center gap-2 px-3 py-2 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors">
                         <i class="ph ph-copy text-eng-600 text-sm"></i>
@@ -735,50 +733,31 @@
         </div>
     </footer>
 
-    <!-- TECHNICAL PROJECT DETAIL MODAL -->
+    <!-- TECHNICAL PROJECT DETAIL MODAL (DYNAMIC CASE-STUDY STYLE) -->
     <div id="project-modal"
         class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
         <div
-            class="bg-white max-w-2xl w-full rounded-lg border border-slate-200 shadow-xl p-6 sm:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto">
+            class="bg-white max-w-3xl w-full rounded-lg border border-slate-200 shadow-xl p-6 sm:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto">
 
             <button onclick="closeProjectModal()"
-                class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1.5 rounded bg-slate-100 border border-slate-200">
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1.5 rounded bg-slate-100 border border-slate-200 z-10">
                 <i class="ph ph-x text-base"></i>
             </button>
 
             <div>
                 <span id="modal-category"
                     class="font-mono text-[11px] text-eng-600 font-semibold uppercase tracking-wider"></span>
-                <h3 id="modal-title" class="text-xl font-bold text-slate-900 mt-0.5"></h3>
+                <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5"></h3>
             </div>
 
-            <!-- Modal Image Container -->
-            <div id="modal-image-container"
-                class="aspect-video bg-slate-100 rounded border border-slate-200 overflow-hidden flex items-center justify-center">
-                <!-- Image or visual dynamically populated -->
+            <!-- Dynamic Body Content Container -->
+            <div id="modal-dynamic-body" class="space-y-6">
+                <!-- Javascript will build your custom layout (Images -> Text -> Images -> Specs) here -->
             </div>
 
-            <!-- Specs Grid -->
-            <div class="grid sm:grid-cols-2 gap-3 font-mono text-xs">
-                <div class="p-3 bg-slate-50 rounded border border-slate-200">
-                    <span class="text-slate-400 block text-[10px]">BOUNDARY CONDITIONS:</span>
-                    <span id="modal-bc" class="text-slate-800 mt-1 block"></span>
-                </div>
-                <div class="p-3 bg-slate-50 rounded border border-slate-200">
-                    <span class="text-slate-400 block text-[10px]">KEY METRIC RESULT:</span>
-                    <span id="modal-result" class="text-emerald-600 font-bold mt-1 block"></span>
-                </div>
-            </div>
-
-            <!-- Methodology -->
-            <div class="space-y-1.5">
-                <h4 class="font-mono text-xs text-slate-500 uppercase">Methodology & Summary</h4>
-                <p id="modal-methodology" class="text-xs text-slate-600 leading-relaxed"></p>
-            </div>
-
-            <div class="pt-2 border-t border-slate-200 flex justify-end">
+            <div class="pt-4 border-t border-slate-200 flex justify-end">
                 <button onclick="closeProjectModal()"
-                    class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded font-mono text-xs">CLOSE</button>
+                    class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded font-mono text-xs font-semibold">CLOSE</button>
             </div>
         </div>
     </div>
@@ -819,52 +798,73 @@
             });
         });
 
-        // Detailed Technical Modal Data for Radhika's 5 Projects
+        /*
+           DYNAMIC PROJECT DATA FORMAT:
+           Inside the 'content' list, you can add blocks in any order:
+           - { type: "image", src: "path/to/image.jpg", caption: "Optional caption text" }
+           - { type: "text", text: "Your detailed paragraph text here..." }
+           - { type: "heading", text: "Sub-section Title" }
+           - { type: "specs", bc: "Boundary conditions...", result: "Key results..." }
+        */
         const projectsData = [
             {
                 title: "Forklift Optimization in FEA",
                 category: "FEA & Structural Optimization",
-                bc: "Static 25 kN tip load, ISO 22915 standard chassis constraints at wheel axles.",
-                result: "-18.4% Structural Mass / Max Von Mises 142 MPa (Yield: 250 MPa)",
-                methodology: "Executed generative density reduction on chassis frame geometry using Ansys Mechanical. Performed mesh convergence analysis with 0.8mm edge sizing around high stress fillet radii to ensure factor of safety > 1.75 under max load.",
-                imgSrc: "images/forklift-fea.jpg",
-                imgFallbackText: "Forklift FEA Structural Optimization"
+                content: [
+                    { type: "image", src: "images/forklift-fea.jpg", caption: "FEA Stress Distribution Contour" },
+                    { type: "specs", bc: "Static 25 kN tip load, ISO 22915 standard chassis constraints at wheel axles.", result: "-18.4% Structural Mass / Max Von Mises 142 MPa (Yield: 250 MPa)" },
+                    { type: "text", text: "Executed generative density reduction on chassis frame geometry using Ansys Mechanical. Performed mesh convergence analysis with 0.8mm edge sizing around high stress fillet radii to ensure factor of safety > 1.75 under max load." }
+                ]
             },
             {
                 title: "Emergency Braking System Design",
                 category: "Mechanical & Dynamic Safety",
-                bc: "120 km/h initial velocity deceleration, 1.2g max stopping load, dual hydraulic circuit redundancy.",
-                result: "42 ms Actuation Response Time / Zero Thermal Lock",
-                methodology: "Designed mechanical linkage and hydraulic caliper system in SolidWorks. Modeled hydraulic transient pressure waves in MATLAB/Simulink and performed Failure Mode Effects Analysis (FMEA) to confirm fail-safe braking behavior.",
-                imgSrc: "images/emergency-braking.jpg",
-                imgFallbackText: "Emergency Braking Mechanism"
+                content: [
+                    { type: "image", src: "images/emergency-braking.jpg", caption: "Braking Kinematic System Assembly" },
+                    { type: "specs", bc: "120 km/h initial velocity deceleration, 1.2g max stopping load, dual hydraulic circuit redundancy.", result: "42 ms Actuation Response Time / Zero Thermal Lock" },
+                    { type: "text", text: "Designed mechanical linkage and hydraulic caliper system in SolidWorks. Modeled hydraulic transient pressure waves in MATLAB/Simulink and performed Failure Mode Effects Analysis (FMEA) to confirm fail-safe braking behavior." }
+                ]
             },
             {
                 title: "Track Cooling System Validation in CFD",
                 category: "Aerothermal & CFD",
-                bc: "Inlet Airflow 45 m/s, Ambient Temp 32°C, k-omega SST Turbulence Model.",
-                result: "+22% Heat Rejection Efficiency / Pressure Drop ΔP = 240 Pa",
-                methodology: "Built 3D fluid mesh in Star-CCM+ for internal sidepod ducting. Resolved boundary layer viscous sublayers with 5 prism mesh layers (Y+ < 1) to eliminate aerodynamic stall and maximize mass flow rate through the heat exchanger core.",
-                imgSrc: "images/track-cooling.jpg",
-                imgFallbackText: "Track Cooling System CFD Mesh"
+                content: [
+                    { type: "image", src: "images/track-cooling.jpg", caption: "Air Duct Velocity Profile Vector Mesh" },
+                    { type: "specs", bc: "Inlet Airflow 45 m/s, Ambient Temp 32°C, k-omega SST Turbulence Model.", result: "+22% Heat Rejection Efficiency / Pressure Drop ΔP = 240 Pa" },
+                    { type: "text", text: "Built 3D fluid mesh in Star-CCM+ for internal sidepod ducting. Resolved boundary layer viscous sublayers with 5 prism mesh layers (Y+ < 1) to eliminate aerodynamic stall and maximize mass flow rate through the heat exchanger core." }
+                ]
             },
             {
                 title: "Battery CFD Thermal Management",
                 category: "Lithium-ion CHT Simulation",
-                bc: "3C Continuous Discharge, Dielectric Liquid Cooling at 2 L/min, Heat Gen 18 W/cell.",
-                result: "Max Cell Temp 42.8°C (&lt; 45°C limit) / Temp Gradient &lt; 3.2°C",
-                methodology: "Conducted Conjugate Heat Transfer (CHT) modeling in Ansys Fluent to analyze cell temperature uniformity in a cylindrical battery pack module with dielectric liquid cold plate channels.",
-                imgSrc: "images/battery-cfd.jpg",
-                imgFallbackText: "Battery Pack CHT Thermal Contour"
+                content: [
+                    { type: "image", src: "images/battery-cfd.jpg", caption: "Liquid Cold Plate Thermal Distribution" },
+                    { type: "specs", bc: "3C Continuous Discharge, Dielectric Liquid Cooling at 2 L/min, Heat Gen 18 W/cell.", result: "Max Cell Temp 42.8°C (< 45°C limit) / Temp Gradient < 3.2°C" },
+                    { type: "text", text: "Conducted Conjugate Heat Transfer (CHT) modeling in Ansys Fluent to analyze cell temperature uniformity in a cylindrical battery pack module with dielectric liquid cold plate channels." }
+                ]
             },
             {
                 title: "EMG Bio-Prosthetic Hand Dissertation",
                 category: "3rd Year Dissertation & Bio-Mechatronics",
-                bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.",
-                result: "94.2% Gesture Intent Classification Accuracy / 120 ms Latency",
-                methodology: "Designed analog signal conditioning hardware for myoelectric feature extraction. Programmed a real-time gesture classifier in C++ to actuate 5 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure.",
-                imgSrc: "es327%20hand.png",
-                imgFallbackText: "EMG Bio-Prosthetic Hand Prototype"
+                content: [
+                    // FIRST PHOTO
+                    { type: "image", src: "es327%20hand.png", caption: "Prosthetic Hand CAD Model & Sensor Array" },
+                    
+                    // SPECS
+                    { type: "specs", bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.", result: "94.2% Gesture Intent Classification Accuracy / 120 ms Latency" },
+                    
+                    // FIRST PARAGRAPH
+                    { type: "text", text: "Development of an electromyographic (EMG) signal processing pipeline, tendon-driven 3D printed linkage, and real-time gesture classification. Designed analog signal conditioning hardware for myoelectric feature extraction." },
+                    
+                    // SUBHEADING
+                    { type: "heading", text: "Prototype Assembly & Real-Time Testing" },
+                    
+                    // SECOND PARAGRAPH
+                    { type: "text", text: "Programmed a real-time gesture classifier in C++ to actuate 5 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure." },
+                    
+                    // SECOND PHOTO (Add your next photo here!)
+                    { type: "image", src: "hand-testing.png", caption: "Physical Testing of Actuated Tendon Linkage" }
+                ]
             }
         ];
 
@@ -875,13 +875,48 @@
 
             document.getElementById('modal-category').textContent = data.category;
             document.getElementById('modal-title').textContent = data.title;
-            document.getElementById('modal-bc').textContent = data.bc;
-            document.getElementById('modal-result').innerHTML = data.result;
-            document.getElementById('modal-methodology').textContent = data.methodology;
 
-            const imgContainer = document.getElementById('modal-image-container');
-            const placeholderUrl = `https://placehold.co/600x375/e2e8f0/334155?text=${encodeURIComponent(data.imgFallbackText)}`;
-            imgContainer.innerHTML = `<img src="${data.imgSrc}" alt="${data.title}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${placeholderUrl}';">`;
+            const dynamicBody = document.getElementById('modal-dynamic-body');
+            dynamicBody.innerHTML = ''; // Clear old content
+
+            // Build dynamic elements in order
+            data.content.forEach(item => {
+                if (item.type === 'image') {
+                    const fallback = `https://placehold.co/600x375/e2e8f0/334155?text=${encodeURIComponent(data.title)}`;
+                    const imgHtml = `
+                        <div class="space-y-1.5">
+                            <div class="aspect-video bg-slate-100 rounded border border-slate-200 overflow-hidden flex items-center justify-center">
+                                <img src="${item.src}" alt="${data.title}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${fallback}';">
+                            </div>
+                            ${item.caption ? `<p class="text-[11px] font-mono text-slate-400 text-center">${item.caption}</p>` : ''}
+                        </div>
+                    `;
+                    dynamicBody.insertAdjacentHTML('beforeend', imgHtml);
+                } 
+                else if (item.type === 'specs') {
+                    const specsHtml = `
+                        <div class="grid sm:grid-cols-2 gap-3 font-mono text-xs my-2">
+                            <div class="p-3 bg-slate-50 rounded border border-slate-200">
+                                <span class="text-slate-400 block text-[10px]">BOUNDARY CONDITIONS:</span>
+                                <span class="text-slate-800 mt-1 block">${item.bc}</span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded border border-slate-200">
+                                <span class="text-slate-400 block text-[10px]">KEY METRIC RESULT:</span>
+                                <span class="text-emerald-600 font-bold mt-1 block">${item.result}</span>
+                            </div>
+                        </div>
+                    `;
+                    dynamicBody.insertAdjacentHTML('beforeend', specsHtml);
+                } 
+                else if (item.type === 'text') {
+                    const textHtml = `<p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${item.text}</p>`;
+                    dynamicBody.insertAdjacentHTML('beforeend', textHtml);
+                } 
+                else if (item.type === 'heading') {
+                    const headingHtml = `<h4 class="font-mono text-xs text-slate-900 uppercase font-bold tracking-wider pt-2 border-t border-slate-100">${item.text}</h4>`;
+                    dynamicBody.insertAdjacentHTML('beforeend', headingHtml);
+                }
+            });
 
             modal.classList.remove('hidden');
         }
