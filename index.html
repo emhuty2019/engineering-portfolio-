@@ -823,8 +823,8 @@
                 category: "Aerothermal & CFD",
                 content: [
                     { type: "image", src: "images/track-cooling.jpg", caption: "Air Duct Velocity Profile Vector Mesh" },
-                    { type: "specs", bc: "Inlet Airflow 45 m/s, Ambient Temp 32°C, k-omega SST Turbulence Model.", result: "+22% Heat Rejection Efficiency / Pressure Drop ΔP = 240 Pa" },
-                    { type: "text", text: "Built 3D fluid mesh in Star-CCM+ for internal sidepod ducting. Resolved boundary layer viscous sublayers with 5 prism mesh layers (Y+ < 1) to eliminate aerodynamic stall and maximize mass flow rate through the heat exchanger core." }
+                    { type: "specs", bc: "Inlet water flow of 5 m/s, k-omega SST Turbulence Model.", result: "Track temperature continously kept below 40 C" },
+                    { type: "text", text: "Design of a cooling system to maintain temperature of pod track below 40 degrees. Built 3D fluid mesh in Star-CCM+. Resolved boundary layer viscous sublayers with 5 prism mesh layers" }
                 ]
             },
             {
@@ -841,10 +841,10 @@
                 category: "3rd Year Dissertation & Bio-Mechatronics",
                 content: [
                     { type: "image", src: "es327-hand.png", caption: "Prosthetic Hand CAD Model & Sensor Array" },
-                    { type: "specs", bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.", result: "94.2% Gesture Intent Classification Accuracy / 120 ms Latency" },
-                    { type: "text", text: "Development of an electromyographic (EMG) signal processing pipeline, tendon-driven 3D printed linkage, and real-time gesture classification. Designed analog signal conditioning hardware for myoelectric feature extraction." },
+                    { type: "specs", bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.", result: "Neural Network with 80% gesture classification accuracy" },
+                    { type: "text", text: "Development of an electromyographic (EMG) signal processing pipeline, tendon-driven 3D printed linkage, and real-time gesture classification. Built within a budget of £200." },
                     { type: "heading", text: "Prototype Assembly & Real-Time Testing" },
-                    { type: "text", text: "Programmed a real-time gesture classifier in C++ to actuate 5 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure." },
+                    { type: "text", text: "Programmed a real-time gesture classifier in C++ to actuate 4 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure." },
                     { type: "image", src: "hand-testing.png", caption: "Physical Testing of Actuated Tendon Linkage" },
                  { type: "image", src: "ES327-gestures.png", caption: "gestures analysed" },
                      { type: "image", src: "confusionmatrix.png", caption: "online training accuracy" },
