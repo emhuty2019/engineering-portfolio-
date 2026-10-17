@@ -752,7 +752,7 @@
 
             <!-- Dynamic Body Content Container -->
             <div id="modal-dynamic-body" class="space-y-6">
-                <!-- Javascript will build your custom layout (Images -> Text -> Images -> Specs) here -->
+                <!-- Javascript builds layout here -->
             </div>
 
             <div class="pt-4 border-t border-slate-200 flex justify-end">
@@ -798,14 +798,6 @@
             });
         });
 
-        /*
-           DYNAMIC PROJECT DATA FORMAT:
-           Inside the 'content' list, you can add blocks in any order:
-           - { type: "image", src: "path/to/image.jpg", caption: "Optional caption text" }
-           - { type: "text", text: "Your detailed paragraph text here..." }
-           - { type: "heading", text: "Sub-section Title" }
-           - { type: "specs", bc: "Boundary conditions...", result: "Key results..." }
-        */
         const projectsData = [
             {
                 title: "Forklift Optimization in FEA",
@@ -848,22 +840,11 @@
                 title: "EMG Bio-Prosthetic Hand Dissertation",
                 category: "3rd Year Dissertation & Bio-Mechatronics",
                 content: [
-                    // FIRST PHOTO
                     { type: "image", src: "es327%20hand.png", caption: "Prosthetic Hand CAD Model & Sensor Array" },
-                    
-                    // SPECS
                     { type: "specs", bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.", result: "94.2% Gesture Intent Classification Accuracy / 120 ms Latency" },
-                    
-                    // FIRST PARAGRAPH
                     { type: "text", text: "Development of an electromyographic (EMG) signal processing pipeline, tendon-driven 3D printed linkage, and real-time gesture classification. Designed analog signal conditioning hardware for myoelectric feature extraction." },
-                    
-                    // SUBHEADING
                     { type: "heading", text: "Prototype Assembly & Real-Time Testing" },
-                    
-                    // SECOND PARAGRAPH
                     { type: "text", text: "Programmed a real-time gesture classifier in C++ to actuate 5 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure." },
-                    
-                    // SECOND PHOTO (Add your next photo here!)
                     { type: "image", src: "hand-testing.png", caption: "Physical Testing of Actuated Tendon Linkage" }
                 ]
             }
@@ -878,16 +859,15 @@
             document.getElementById('modal-title').textContent = data.title;
 
             const dynamicBody = document.getElementById('modal-dynamic-body');
-            dynamicBody.innerHTML = ''; // Clear old content
+            dynamicBody.innerHTML = '';
 
-            // Build dynamic elements in order
             data.content.forEach(item => {
                 if (item.type === 'image') {
                     const fallback = `https://placehold.co/600x375/e2e8f0/334155?text=${encodeURIComponent(data.title)}`;
                     const imgHtml = `
                         <div class="space-y-1.5">
-                            <div class="aspect-video bg-slate-100 rounded border border-slate-200 overflow-hidden flex items-center justify-center">
-                                <img src="${item.src}" alt="${data.title}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${fallback}';">
+                            <div class="w-full bg-slate-100 rounded border border-slate-200 overflow-hidden p-2 flex items-center justify-center">
+                                <img src="${item.src}" alt="${data.title}" class="max-h-[70vh] w-auto h-auto object-contain mx-auto" onerror="this.onerror=null; this.src='${fallback}';">
                             </div>
                             ${item.caption ? `<p class="text-[11px] font-mono text-slate-400 text-center">${item.caption}</p>` : ''}
                         </div>
@@ -926,7 +906,6 @@
             document.getElementById('project-modal').classList.add('hidden');
         }
 
-        // Copy Email Address Utility
         function copyEmailToClipboard() {
             const email = "radhika.tyagi@engineering.com";
             const btnText = document.getElementById('email-btn-text');
