@@ -840,13 +840,18 @@
                 content: [
                     { type: "image", src: "es327-hand.png", caption: "Prosthetic Hand CAD Model & Sensor Array" },
                     { type: "specs", bc: "Surface EMG electrode input, Bandpass Filter 20-450 Hz, 50 Hz Notch filter.", result: "Neural Network with 80% gesture classification accuracy" },
-                    { type: "text", text: "Development of an electromyographic (EMG) signal processing pipeline, tendon-driven 3D printed linkage, and real-time gesture classification. Built within a budget of £200." },
+                    { type: "text", text: " Design of a low-cost sEMG-Controlled Bionic Hand using a Convolutional Neural Network for Gesture Classfication. Built within a budget of £200." },
                     { type: "heading", text: "Prototype Assembly & Real-Time Testing" },
-                    { type: "text", text: "Programmed a real-time gesture classifier in C++ to actuate 4 tendon-driven servo motors housed inside a custom 3D printed prosthetic palm structure." },
-                    { type: "image", src: "hand-testing.png", caption: "Physical Testing of Actuated Tendon Linkage" },
+                    { type: "text", text: "." },
+                    { type: "image", src: "hand-testing.png", caption: "Physical Testing of Actuated Tendon Linkage" }
                  { type: "image", src: "ES327-gestures.png", caption: "gestures analysed" },
+                      { type: "text", text: "The project had three aims: building a 3D printed bionic hand assembly with enough actuating digits to support at least 3 grasping patterns, obtaining, cleaning and processing EMG signals with a signal to noise ratio of at least 15dB from the arm using a single channel 3 lead electrode and creating an algorithm to classify a minimum of 3 different gestures with a minimum validation accuracy of 50%" },
                      { type: "image", src: "confusionmatrix.png", caption: "online training accuracy" },
+                      { type: "text", text: "The mechanical assembly involved adapting an open source model from Enable prosthetics to integrate servo motor actuation of the fingers and a stand to house the electronics and hold the the hand up for demonstration purposes." },
                     { type: "image", src: "training-analysis.png", caption: "training process" }
+                       { type: "text", text: "The raw EMG signal was acquired using the MikroElektronika EMG click board. This signal was passed through a butterworth filter and notch filter for noise reduction and filtering. After this the signal was rectified and windowed into segments to prepare it for being passed through a neural network. This neural network took the raw signal and outputed a probabilitiy for each gesture. The gesture with the consistently highest probability was chosen as the current gesture and was programmed to send a pulse width modulation command to the servo motors in the hand." },
+                    { type: "text", text: "The Convolution Neural Network Architecture involved 2 convolutional layers and 2 max pooling layers. After this data was flattened and sent through 2 fully connected dense layers." }, 
+                      { type: "text", text: "In online testing, an accuracy of 82.57% was found. " } 
                 ]
             }
         ];
