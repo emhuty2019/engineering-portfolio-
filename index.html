@@ -802,8 +802,8 @@
                 category: "FEA & Structural Optimization",
                 content: [
                     { type: "image", src: "FEM-analysis.png", caption: "FEA Stress Distribution Contour" },
-                    { type: "specs", bc: "Static 25 kN tip load, ISO 22915 standard chassis constraints at wheel axles.", result: "-18.4% Structural Mass / Max Von Mises 142 MPa (Yield: 250 MPa)" },
-                    { type: "text", text: "Executed generative density reduction on chassis frame geometry using Ansys Mechanical. Performed mesh convergence analysis with 0.8mm edge sizing around high stress fillet radii to ensure factor of safety > 1.75 under max load." },
+                    { type: "specs", bc: "Axial load of 1.13 KN applied at gear, peak stress to be maintained below yield stress of chosen material.", result: "-79% Structural Mass / Max Von Mises 205 MPa (Yield: 220 MPa)" },
+                    { type: "text", text: "Partitioned and generated mesh of given geometry in Abaqus. Conducted Mesh Convergence study of final geometry which identified 1.5mm as the optimal seed size. Determined the natural frequencies and compared to that of common components in vehicles to conclude that the design is dynamically stable. Carried out numerical calculations for dynamic and statical validation of results. Conducted materials investigation using Ansys Granta Edupack. Asbhy plot graph produced to compare suitable materials. " },
                     { type: "image", src: "FEM-original.png", caption: "Original geometry" }
                 ]
             },
