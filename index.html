@@ -811,18 +811,18 @@
                 title: "Emergency Braking System Design",
                 category: "Mechanical & Dynamic Safety",
                 content: [
-                    { type: "image", src: "images/emergency-braking.jpg", caption: "Braking Kinematic System Assembly" },
-                    { type: "specs", bc: "120 km/h initial velocity deceleration, 1.2g max stopping load, dual hydraulic circuit redundancy.", result: "42 ms Actuation Response Time / Zero Thermal Lock" },
-                    { type: "text", text: "Designed mechanical linkage and hydraulic caliper system in SolidWorks. Modeled hydraulic transient pressure waves in MATLAB/Simulink and performed Failure Mode Effects Analysis (FMEA) to confirm fail-safe braking behavior." }
+                    { type: "image", src: "images/emergency-braking.jpg", caption: "Magnetic braking system assembly" },
+                    { type: "specs", bc: "Passive Mechanical Fail Safe Design, Track tripped magnetic switch, No software or signally dependency.", result: "Cuts the circuit flow at track's stopping point to stop power in the pod" },
+                    { type: "text", text: "Designed to work when all signalling and electrical systems fail. Failure Mode Effects Analysis (FMEA) performed to confirm fail-safe braking behavior." }
                 ]
             },
             {
                 title: "Track Cooling System Validation in CFD",
                 category: "Aerothermal & CFD",
                 content: [
-                    { type: "image", src: "images/track-cooling.jpg", caption: "Air Duct Velocity Profile Vector Mesh" },
+                    { type: "image", src: "images/track-cooling.jpg", caption: "Heat flow mesh profile" },
                     { type: "specs", bc: "Inlet water flow of 5 m/s, k-omega SST Turbulence Model.", result: "Track temperature continously kept below 40 C" },
-                    { type: "text", text: "Design of a cooling system to maintain temperature of pod track below 40 degrees. Built 3D fluid mesh in Star-CCM+. Resolved boundary layer viscous sublayers with 5 prism mesh layers" }
+                    { type: "text", text: "Design of a cooling system to maintain temperature of pod track below 40 degrees. Built 3D fluid mesh in Star-CCM+." }
                 ]
             },
             {
