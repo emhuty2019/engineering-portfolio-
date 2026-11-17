@@ -269,14 +269,14 @@
                 <!-- Projects Tiles Grid -->
                 <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <!-- PROJECT 1: Forklift FEA -->
+                    <!-- PROJECT 1: Forkshift weight optimisation FEA -->
                     <div class="project-card tech-box flex flex-col bg-white border border-slate-200 rounded p-5 shadow-sm hover:shadow-md transition-all group"
                         data-category="fea">
                         <div
                             class="relative aspect-[16/10] bg-slate-100 rounded border border-slate-200 overflow-hidden mb-4 flex items-center justify-center">
-                            <img src="forkshiftrender2.png" alt="Forklift Optimization FEA"
+                            <img src="forkshiftrender2.png" alt="Forkshift weight optimisation FEA"
                                 class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
-                                onerror="this.onerror=null; this.src='https://placehold.co/600x375/e2e8f0/334155?text=Forklift+FEA+Image+Here';">
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x375/e2e8f0/334155?text=Forkshift+FEA+Image+Here';">
                             <span
                                 class="absolute top-2 right-2 px-2 py-0.5 rounded bg-white/90 border border-slate-200 text-[10px] font-mono text-slate-700 shadow-sm">FEA
                                 CONTOUR</span>
@@ -289,7 +289,7 @@
                                     & Structural Optimization</span>
                                 <h3
                                     class="text-base font-bold text-slate-900 group-hover:text-eng-600 transition-colors mt-0.5">
-                                    Forklift Optimization in FEA
+                                    Forkshift weight optimisation FEA
                                 </h3>
                                 <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
                                     Topology optimization and stress analysis of a gear forkshift frame under maximum
@@ -546,7 +546,7 @@
                         data-category="cfd">
                         <div
                             class="relative aspect-[16/10] bg-slate-100 rounded border border-slate-200 overflow-hidden mb-4 flex items-center justify-center">
-                            <img src="covercfd.PNG" alt="Office room ventilation strategy analysis CFD"
+                            <img src="images/office-ventilation.png" alt="Office room ventilation strategy analysis CFD"
                                 class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                                 onerror="this.onerror=null; this.src='https://placehold.co/600x375/e2e8f0/334155?text=Office+Ventilation+CFD+Image+Here';">
                             <span
@@ -852,13 +852,21 @@
 
         const projectsData = [
             {
-                title: "Forklift Optimization in FEA",
+                title: "Forkshift weight optimisation FEA",
                 category: "FEA & Structural Optimization",
                 content: [
-                    { type: "image", src: "FEM-analysis.png", caption: "FEA Stress Distribution Contour" },
-                    { type: "specs", bc: "Axial load of 1.13 KN applied at gear, peak stress to be maintained below yield stress of chosen material.", result: "-79% Structural Mass / Max Von Mises 205 MPa (Yield: 220 MPa)" },
-                    { type: "text", text: "Partitioned and generated mesh of given geometry in Abaqus. Conducted Mesh Convergence study of final geometry which identified 1.5mm as the optimal seed size. Determined the natural frequencies and compared to that of common components in vehicles to conclude that the design is dynamically stable. Carried out numerical calculations for dynamic and statical validation of results. Conducted materials investigation using Ansys Granta Edupack. Asbhy plot graph produced to compare suitable materials. " },
-                    { type: "image", src: "FEM-original.png", caption: "Original geometry" }
+                    { type: "text", text: "The shift fork plays an essential role in gear switching in the gear transmission system of automotive vehicles. The shift fork moves the synchronizer sleeves along the axle to engage and disengage different gears. In this process a large axial load is applied to the fork shift and large bending moments are experienced at the fork legs. Therefore it is critical to design fork shifts such that they can withstand these loads repeatedly without experiencing any fracture or permanent deformation." },
+                    { type: "text", text: "The main objective of this project was to investigate the design of a fork shift that meets the given design specifications whilst minimising weight for lightweight design. This investigation was carried out using Finite Element Method simulations on Abaqus CAE. The given shift fork has an axial load of 1136 Newtons applied to it via at the centre of a rigid ring around its legs which replicates the axial load that would be applied by a sychroniser sleeve. The fork is held in place at its rail hole via a fixed Encastre boundary condition." },
+                    { type: "image", src: "images/forkshift-loading.png", caption: "image of loading conditions" },
+                    { type: "text", text: "A linear analysis was conducted to confirm all boundary conditions, surface definitions and loadings are applied correctly and examine the displacement. The mesh was generated using hexahedralC3D8R elements and a seed size of 2 which was arbitrarily chosen for the first simulation as mesh convergence will be carried out further into the report to choose a suitable seed size" },
+                    { type: "image", src: "images/forkshift-initial-stress.png", caption: "stress and displacement distribution of initial geometry" },
+                    { type: "heading", text: "Mesh Convergence study" },
+                    { type: "image", src: "images/forkshift-mesh-convergence.png", caption: "plot of how stress and displacement vary with global seed size" },
+                    { type: "text", text: "A mesh convergence test was conducted on the initial geometry. As seen in the image above, decreasing the mesh size caused the stress to increase rapidly whilst the displacement decreased steadily and converged." },
+                    { type: "heading", text: "Final design" },
+                    { type: "text", text: "The design underwent 7 iterations through which mass was reduced whilst the peak stress and maximum axial deflection was limited" },
+                    { type: "image", src: "images/forkshift-iterations.png", caption: "table showing changes implemented through each iteration" },
+                    { type: "heading", text: "Natural Frequency Determination" }
                 ]
             },
             {
@@ -913,11 +921,11 @@
                 category: "HVAC & Building CFD",
                 content: [
                     { type: "text", text: "This project was done as part of coursework for the ES440 Computational Fluid Dynamics in the Warwick MEng Mechanical Engineering course. 2 different ventilation strategies in an office room were investigated, with the first being mixing ventilation and the 2nd being displacement ventilation. The room contained simplified blocks representing furniture and occupants." },
-                    { type: "image", src: "ioffice-geometry.png", caption: "images of the geometry used" },
+                    { type: "image", src: "images/office-geometry.png", caption: "images of the geometry used" },
                     { type: "heading", text: "Meshing strategy" },
-                    { type: "image", src: "meshcfd.PNG", caption: "table of the meshing strategy" },
+                    { type: "image", src: "images/office-meshing-strategy.png", caption: "table of the meshing strategy" },
                     { type: "text", text: "A mesh independence study was used to identify the appropriate refinement required for the model. In this study, 5 different meshes were tested and the simulation was ran for 70 seconds of physical time. The volume averaged kinetic energy and room temperature at several points was compared" },
-                    { type: "image", src: "office-mesh-independence.png", caption: "tables and graphs comparing metrics for different mesh sizes" },
+                    { type: "image", src: "images/office-mesh-independence.png", caption: "tables and graphs comparing metrics for different mesh sizes" },
                     { type: "text", text: "From this study, Mesh 5 was identified as the most suitable mesh size." },
                     { type: "heading", text: "Time step independence test" },
                     { type: "text", text: "this section is still in progress" }
