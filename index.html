@@ -253,7 +253,7 @@
                     <div class="flex flex-wrap gap-2 font-mono text-xs" id="project-filters">
                         <button data-filter="all"
                             class="filter-btn active-filter px-3 py-1.5 rounded border border-eng-600 bg-eng-500 text-white font-medium shadow-sm transition-all">ALL
-                            (5)</button>
+                            (6)</button>
                         <button data-filter="fea"
                             class="filter-btn px-3 py-1.5 rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 transition-all">FEA
                             & STRUCTURAL</button>
@@ -301,12 +301,12 @@
                                 <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Abaqus
-                                        </span>
+                                    </span>
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Fusion 360</span>
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Ansys Granta Edupack
-                                           </span>
+                                    </span>
                                 </div>
 
                                 <div
@@ -355,10 +355,10 @@
                                 <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Train design
-                                        </span>
+                                    </span>
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Fusion 360
-                                        </span>
+                                    </span>
                                     <span
                                         class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">FMEA</span>
                                 </div>
@@ -533,6 +533,60 @@
                                 </div>
 
                                 <button onclick="openProjectModal(4)"
+                                    class="w-full py-2 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded text-xs font-mono text-slate-800 font-medium transition-all flex items-center justify-center gap-2">
+                                    <span>VIEW PROJECT SPECS</span>
+                                    <i class="ph ph-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 6: Office room ventilation strategy analysis CFD -->
+                    <div class="project-card tech-box flex flex-col bg-white border border-slate-200 rounded p-5 shadow-sm hover:shadow-md transition-all group"
+                        data-category="cfd">
+                        <div
+                            class="relative aspect-[16/10] bg-slate-100 rounded border border-slate-200 overflow-hidden mb-4 flex items-center justify-center">
+                            <img src="images/office-ventilation.png" alt="Office room ventilation strategy analysis CFD"
+                                class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x375/e2e8f0/334155?text=Office+Ventilation+CFD+Image+Here';">
+                            <span
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-white/90 border border-slate-200 text-[10px] font-mono text-slate-700 shadow-sm">CFD
+                                SIMULATION</span>
+                        </div>
+
+                        <div class="flex-grow flex flex-col justify-between space-y-3">
+                            <div>
+                                <span
+                                    class="text-[10px] font-mono text-eng-600 uppercase tracking-wider font-semibold">HVAC
+                                    & Building CFD</span>
+                                <h3
+                                    class="text-base font-bold text-slate-900 group-hover:text-eng-600 transition-colors mt-0.5">
+                                    Office room ventilation strategy analysis CFD
+                                </h3>
+                                <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                                    CFD analysis of a simplified office room to compare mixing and displacement ventilation using Siemens Star CCM + 2506
+                                </p>
+                            </div>
+
+                            <div class="space-y-3 pt-2 border-t border-slate-100">
+                                <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Star-CCM+
+                                        2506</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">ES440
+                                        CFD</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">Ventilation</span>
+                                </div>
+
+                                <div
+                                    class="flex items-center justify-between text-xs font-mono bg-slate-50 p-2 rounded border border-slate-200">
+                                    <span class="text-slate-500">Optimal Mesh:</span>
+                                    <span class="text-emerald-600 font-bold">Mesh 5 Selected</span>
+                                </div>
+
+                                <button onclick="openProjectModal(5)"
                                     class="w-full py-2 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded text-xs font-mono text-slate-800 font-medium transition-all flex items-center justify-center gap-2">
                                     <span>VIEW PROJECT SPECS</span>
                                     <i class="ph ph-arrow-right"></i>
@@ -844,16 +898,31 @@
                     { type: "heading", text: "Prototype Assembly & Real-Time Testing" },
                     { type: "text", text: "." },
                     { type: "image", src: "signalprocessingES327.png", caption: "Graphs of raw EMG signals being filtered" },
-                 { type: "image", src: "ES327-gestures.png", caption: "gestures analysed" },
-                      { type: "text", text: "The project had three aims: building a 3D printed bionic hand assembly with enough actuating digits to support at least 3 grasping patterns, obtaining, cleaning and processing EMG signals with a signal to noise ratio of at least 15dB from the arm using a single channel 3 lead electrode and creating an algorithm to classify a minimum of 3 different gestures with a minimum validation accuracy of 50%" },
-                     { type: "image", src: "confusionmatrix.png", caption: "online training accuracy" },
-                      { type: "text", text: "The mechanical assembly involved adapting an open source model from Enable prosthetics to integrate servo motor actuation of the fingers and a stand to house the electronics and hold the the hand up for demonstration purposes." },
+                    { type: "image", src: "ES327-gestures.png", caption: "gestures analysed" },
+                    { type: "text", text: "The project had three aims: building a 3D printed bionic hand assembly with enough actuating digits to support at least 3 grasping patterns, obtaining, cleaning and processing EMG signals with a signal to noise ratio of at least 15dB from the arm using a single channel 3 lead electrode and creating an algorithm to classify a minimum of 3 different gestures with a minimum validation accuracy of 50%" },
+                    { type: "image", src: "confusionmatrix.png", caption: "online training accuracy" },
+                    { type: "text", text: "The mechanical assembly involved adapting an open source model from Enable prosthetics to integrate servo motor actuation of the fingers and a stand to house the electronics and hold the the hand up for demonstration purposes." },
                     { type: "image", src: "training-analysis.png", caption: "training process" },
-                       { type: "text", text: "The raw EMG signal was acquired using the MikroElektronika EMG click board. This signal was passed through a butterworth filter and notch filter for noise reduction and filtering. After this the signal was rectified and windowed into segments to prepare it for being passed through a neural network. This neural network took the raw signal and outputed a probabilitiy for each gesture. The gesture with the consistently highest probability was chosen as the current gesture and was programmed to send a pulse width modulation command to the servo motors in the hand." },
-                    { type: "text", text: "The Convolution Neural Network Architecture involved 2 convolutional layers and 2 max pooling layers. After this data was flattened and sent through 2 fully connected dense layers." }, 
-                      { type: "text", text: "In online testing, an accuracy of 82.57% was found. " } 
+                    { type: "text", text: "The raw EMG signal was acquired using the MikroElektronika EMG click board. This signal was passed through a butterworth filter and notch filter for noise reduction and filtering. After this the signal was rectified and windowed into segments to prepare it for being passed through a neural network. This neural network took the raw signal and outputed a probabilitiy for each gesture. The gesture with the consistently highest probability was chosen as the current gesture and was programmed to send a pulse width modulation command to the servo motors in the hand." },
+                    { type: "text", text: "The Convolution Neural Network Architecture involved 2 convolutional layers and 2 max pooling layers. After this data was flattened and sent through 2 fully connected dense layers." },
+                    { type: "text", text: "In online testing, an accuracy of 82.57% was found. " }
                 ]
             },
+            {
+                title: "Office room ventilation strategy analysis CFD",
+                category: "HVAC & Building CFD",
+                content: [
+                    { type: "text", text: "This project was done as part of coursework for the ES440 Computational Fluid Dynamics in the Warwick MEng Mechanical Engineering course. 2 different ventilation strategies in an office room were investigated, with the first being mixing ventilation and the 2nd being displacement ventilation. The room contained simplified blocks representing furniture and occupants." },
+                    { type: "image", src: "images/office-geometry.png", caption: "images of the geometry used" },
+                    { type: "heading", text: "Meshing strategy" },
+                    { type: "image", src: "images/office-meshing-strategy.png", caption: "table of the meshing strategy" },
+                    { type: "text", text: "A mesh independence study was used to identify the appropriate refinement required for the model. In this study, 5 different meshes were tested and the simulation was ran for 70 seconds of physical time. The volume averaged kinetic energy and room temperature at several points was compared" },
+                    { type: "image", src: "images/office-mesh-independence.png", caption: "tables and graphs comparing metrics for different mesh sizes" },
+                    { type: "text", text: "From this study, Mesh 5 was identified as the most suitable mesh size." },
+                    { type: "heading", text: "Time step independence test" },
+                    { type: "text", text: "this section is still in progress" }
+                ]
+            }
         ];
 
         function openProjectModal(index) {
@@ -869,17 +938,17 @@
 
             data.content.forEach(item => {
                 if (item.type === 'image') {
-                    const fallback = `https://placehold.co/600x375/e2e8f0/334155?text=${encodeURIComponent(data.title)}`;
+                    const fallback = `https://placehold.co/600x375/e2e8f0/334155?text=${encodeURIComponent(item.caption || data.title)}`;
                     const imgHtml = `
                         <div class="space-y-1.5">
                             <div class="w-full bg-slate-100 rounded border border-slate-200 overflow-hidden p-2 flex items-center justify-center">
-                                <img src="${item.src}" alt="${data.title}" class="max-h-[70vh] w-auto h-auto object-contain mx-auto" onerror="this.onerror=null; this.src='${fallback}';">
+                                <img src="${item.src}" alt="${item.caption || data.title}" class="max-h-[70vh] w-auto h-auto object-contain mx-auto" onerror="this.onerror=null; this.src='${fallback}';">
                             </div>
                             ${item.caption ? `<p class="text-[11px] font-mono text-slate-400 text-center">${item.caption}</p>` : ''}
                         </div>
                     `;
                     dynamicBody.insertAdjacentHTML('beforeend', imgHtml);
-                } 
+                }
                 else if (item.type === 'specs') {
                     const specsHtml = `
                         <div class="grid sm:grid-cols-2 gap-3 font-mono text-xs my-2">
@@ -894,11 +963,11 @@
                         </div>
                     `;
                     dynamicBody.insertAdjacentHTML('beforeend', specsHtml);
-                } 
+                }
                 else if (item.type === 'text') {
                     const textHtml = `<p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${item.text}</p>`;
                     dynamicBody.insertAdjacentHTML('beforeend', textHtml);
-                } 
+                }
                 else if (item.type === 'heading') {
                     const headingHtml = `<h4 class="font-mono text-xs text-slate-900 uppercase font-bold tracking-wider pt-2 border-t border-slate-100">${item.text}</h4>`;
                     dynamicBody.insertAdjacentHTML('beforeend', headingHtml);
