@@ -873,9 +873,11 @@
                 title: "Emergency Braking System Design",
                 category: "Mechanical & Dynamic Safety",
                 content: [
+                    { type: "text", text: "This project was done as part of my role as a mechanical engineer in the Warwick Hyperloop Student Society in competition submission for the European Hyperloop Week 2026. The train pod is required to have multiple modes of braking under the official competition regulations. This project aimed to design the last of 3 emergency braking systems which would act as a last resort at the end of track and would be triggered regardless of any system or electrical faults. Regulations M3.1. to M.3.10 apply to this design." },
+                    { type: "text", text: "The final design concept involved a magnetic switch which sits at the top plate of the chassis. The top head of the switch is enclosed within a lever. There is a bridge at the track end with a height aligning to that of the lever. Once the pod reaches the bridge, the lever is knocked over and the magnetic switch is opened. This opens the circuit and cuts power to the whole electrical system in the pod." },
+                    { type: "text", text: "Due to non disclosure agreements in relation to the competition, the full details of this design cannot be revealed however, calculations were used to determine the required deceleration and lever bending stress. From this it was determined that PLA was suitable both in its budget and material properties. A DFMEA analysis was conducted and a manufacturing plan was produced. Alongside this, a Budget of Materials was created and the total system is predicted to have a mass of approximately 60g.  This system is due to be manufactured for demonstration in the European Hyperloop Week Competition 2027 submission by the Warwick Student Team." },
                     { type: "image", src: "images/emergency-braking.jpg", caption: "Magnetic braking system assembly" },
-                    { type: "specs", bc: "Passive Mechanical Fail Safe Design, Track tripped magnetic switch, No software or signally dependency.", result: "Cuts the circuit flow at track's stopping point to stop power in the pod" },
-                    { type: "text", text: "Designed to work when all signalling and electrical systems fail. Failure Mode Effects Analysis (FMEA) performed to confirm fail-safe braking behavior." }
+                    { type: "specs", bc: "Passive Mechanical Fail Safe Design, Track tripped magnetic switch, No software or signally dependency.", result: "Cuts the circuit flow at track's stopping point to stop power in the pod" }
                 ]
             },
             {
