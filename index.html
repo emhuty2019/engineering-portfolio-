@@ -859,14 +859,16 @@
                     { type: "text", text: "The main objective of this project was to investigate the design of a fork shift that meets the given design specifications whilst minimising weight for lightweight design. This investigation was carried out using Finite Element Method simulations on Abaqus CAE. The given shift fork has an axial load of 1136 Newtons applied to it via at the centre of a rigid ring around its legs which replicates the axial load that would be applied by a sychroniser sleeve. The fork is held in place at its rail hole via a fixed Encastre boundary condition." },
                     { type: "image", src: "fealoading.png", caption: "image of loading conditions" },
                     { type: "text", text: "A linear analysis was conducted to confirm all boundary conditions, surface definitions and loadings are applied correctly and examine the displacement. The mesh was generated using hexahedralC3D8R elements and a seed size of 2 which was arbitrarily chosen for the first simulation as mesh convergence will be carried out further into the report to choose a suitable seed size" },
-                    { type: "image", src: ".png", caption: "stress and displacement distribution of initial geometry" },
+                    { type: "image", src: "FEM-original.png", caption: "stress and displacement distribution of initial geometry" },
                     { type: "heading", text: "Mesh Convergence study" },
                     { type: "image", src: "meshconvergencetable.png", caption: "plot of how stress and displacement vary with global seed size" },
                     { type: "text", text: "A mesh convergence test was conducted on the initial geometry. As seen in the image above, decreasing the mesh size caused the stress to increase rapidly whilst the displacement decreased steadily and converged." },
                     { type: "heading", text: "Final design" },
                     { type: "text", text: "The design underwent 7 iterations through which mass was reduced whilst the peak stress and maximum axial deflection was limited" },
                     { type: "image", src: "iterationstable.png", caption: "table showing changes implemented through each iteration" },
-                    { type: "heading", text: "Natural Frequency Determination" }
+                    { type: "heading", text: "Final Design" },
+                    { type: "text", text: "As seen in the image below, the final design had a mass of 0.252kg, a mass reduction of nearly 80%. The material Cast Iron 8002 was chosen after conducting a Materials selection analysis using Ansys Granta Edupack. The model had a final Von Mises Peak Stress of 205MPa which was under the Yield Strength of Cast Iron 8002 and a maximum axial deflection of 0.178mm." },
+                    { type: "image", text: "FEM-analysis.png" }
                 ]
             },
             {
